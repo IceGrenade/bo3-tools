@@ -13,13 +13,16 @@ I wrote these batch files to help automate workflows using:
 
 ---
 
-## 🛠 Script Descriptions
+## 🛠 Automation Script Description
 
 ### `ZeusAutomation.bat`
 - Converts prefabs into `.xmodel_bin` files.
 - Moves them to your Zeus program folder.
 - Only processes files that are **less than a day old**.
 - Automates the full conversion pipeline.
+
+---
+## 🛠 Manual Script Descriptions
 
 ### `GetD3Files.bat`
 - Copies all `.d3dbsp` files from your BO3 tools folder.
