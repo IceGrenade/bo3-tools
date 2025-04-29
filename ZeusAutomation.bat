@@ -31,13 +31,13 @@ for %%F in ("%zeusExe%" "%exportxExe%" "%getPrefabsBat%" "%getD3FilesBat%" "%mov
     )
 )
 
-:: Step 1: Run IceGrenade_GetNewPrefabs.bat to retrieve .map files
-echo [%date% %time%] Running IceGrenade_GetNewPrefabs.bat... >> "%logFile%"
+:: Step 1: Run GetNewPrefabs.bat to retrieve .map files
+echo [%date% %time%] Running GetNewPrefabs.bat... >> "%logFile%"
 call "%getPrefabsBat%"
 if errorlevel 1 (
-    echo [%date% %time%] NOTE: IceGrenade_GetNewPrefabs.bat returned errorlevel %errorlevel%, but continuing. >> "%logFile%"
+    echo [%date% %time%] NOTE: GetNewPrefabs.bat returned errorlevel %errorlevel%, but continuing. >> "%logFile%"
 )
-echo [%date% %time%] Completed IceGrenade_GetNewPrefabs.bat. >> "%logFile%"
+echo [%date% %time%] Completed GetNewPrefabs.bat. >> "%logFile%"
 timeout /t 2 /nobreak >nul
 
 color 6
@@ -65,13 +65,13 @@ if !mapCount! equ 0 (
     echo [%date% %time%] WARNING: No .map files found in %rootFolder%. >> "%logFile%"
 )
 
-:: Step 3: Run IceGrenade_GetD3Files.bat to retrieve .d3dbsp files
-echo [%date% %time%] Running IceGrenade_GetD3Files.bat... >> "%logFile%"
+:: Step 3: Run GetD3Files.bat to retrieve .d3dbsp files
+echo [%date% %time%] Running GetD3Files.bat... >> "%logFile%"
 call "%getD3FilesBat%"
 if errorlevel 1 (
-    echo [%date% %time%] NOTE: IceGrenade_GetD3Files.bat returned errorlevel %errorlevel%, but continuing. >> "%logFile%"
+    echo [%date% %time%] NOTE: GetD3Files.bat returned errorlevel %errorlevel%, but continuing. >> "%logFile%"
 )
-echo [%date% %time%] Completed IceGrenade_GetD3Files.bat. >> "%logFile%"
+echo [%date% %time%] Completed GetD3Files.bat. >> "%logFile%"
 timeout /t 2 /nobreak >nul
 
 color b
@@ -99,11 +99,11 @@ if !d3dbspCount! equ 0 (
     echo [%date% %time%] WARNING: No .d3dbsp files found in %rootFolder%. >> "%logFile%"
 )
 
-:: Step 5: Run IceGrenade_MoveConvertedFiles.bat to move .xmodel_export files
-echo [%date% %time%] Running IceGrenade_MoveConvertedFiles.bat... >> "%logFile%"
+:: Step 5: Run MoveConvertedFiles.bat to move .xmodel_export files
+echo [%date% %time%] Running MoveConvertedFiles.bat... >> "%logFile%"
 call "%moveConvertedBat%"
 set "moveErrorLevel=%errorlevel%"
-echo [%date% %time%] IceGrenade_MoveConvertedFiles.bat completed with exit code !moveErrorLevel!. >> "%logFile%"
+echo [%date% %time%] MoveConvertedFiles.bat completed with exit code !moveErrorLevel!. >> "%logFile%"
 :: Check .xmodel_export files in root folder
 set "xmodelCount=0"
 for %%F in ("%rootFolder%\*.xmodel_export") do set /a xmodelCount+=1
@@ -140,7 +140,7 @@ if !xmodelExportCount! equ 0 (
 )
 
 color 6
-:: Step 7: Rename .xmodel_bin files using IceGrenade_ReNamer.bat
+:: Step 7: Rename .xmodel_bin files using ReNamer.bat
 echo [%date% %time%] Renaming .xmodel_bin files... >> "%logFile%"
 set "xmodelBinCount=0"
 for %%F in ("%rootFolder%\*.xmodel_bin") do (
