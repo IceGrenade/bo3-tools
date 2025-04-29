@@ -11,6 +11,5 @@ if not exist "%destFolder%" mkdir "%destFolder%"
 :: Use forfiles to select files modified within the last day
 forfiles /P "%sourceFolder%" /S /M *.map /D 0 /C "cmd /c copy @path \"%destFolder%\\\"
 
-
 endlocal
 pause
