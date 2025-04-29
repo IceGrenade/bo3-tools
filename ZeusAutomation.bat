@@ -15,10 +15,10 @@ set "errorCount=0"
 :: Paths to executables and batch files
 set "zeusExe=%rootFolder%\Zeus.exe"
 set "exportxExe=%rootFolder%\exportx.exe"
-set "getPrefabsBat=%rootFolder%\IceGrenade_GetNewPrefabs.bat"
-set "getD3FilesBat=%rootFolder%\IceGrenade_GetD3Files.bat"
-set "moveConvertedBat=%rootFolder%\IceGrenade_MoveConvertedFiles.bat"
-set "renamerBat=%rootFolder%\IceGrenade_ReNamer.bat"
+set "getPrefabsBat=%rootFolder%\GetNewPrefabs.bat"
+set "getD3FilesBat=%rootFolder%\GetD3Files.bat"
+set "moveConvertedBat=%rootFolder%\MoveConvertedFiles.bat"
+set "renamerBat=%rootFolder%\ReNamer.bat"
 
 color 6
 :: Check if required files exist
