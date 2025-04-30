@@ -53,3 +53,7 @@ I wrote these batch files to help automate workflows using:
 - Designed to simplify modding workflows with Zeus & ExportX.
 - Helps keep file handling clean and minimal.
 
+## 📝 Updates
+
+- At somepoint I want to add an exclusion list, so it can exclude big map prefabs.
+
